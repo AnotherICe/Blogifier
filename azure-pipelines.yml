@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu 16.04'
+  vmImage: 'Ubuntu 20.04'
 
 variables:
   dockerRegistry: 'AnotherICe - Docker - Registry'
@@ -15,7 +15,7 @@ stages:
   jobs:
   - job: dockerImage
     pool:
-      vmImage: 'Ubuntu 16.04'
+      vmImage: 'Ubuntu 20.04'
     steps:
     - task: Docker@2
       inputs:
@@ -30,7 +30,7 @@ stages:
         dockerfile: dockerfile
   - job: dockerComposeConfiguration
     pool:
-      vmImage: 'Ubuntu 16.04'
+      vmImage: 'Ubuntu 20.04'
     steps:
     - publish: $(Build.SourcesDirectory)/deploy/$(dockerComposeFile)
       artifact: $(dockerComposeArtifact)
