@@ -32,13 +32,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{6015AFDB-9
 		docs\VideoAudio.md = docs\VideoAudio.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{BE5E262F-B96C-49BF-BAE0-E00CE3B4F78B}"
-	ProjectSection(SolutionItems) = preProject
-		build\build.cake = build\build.cake
-		build\build.ps1 = build\build.ps1
-		dockerfile = dockerfile
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogifier", "src\Blogifier\Blogifier.csproj", "{0DC52C2B-3803-4BB3-A5A2-6371E94700D7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogifier.Core", "src\Blogifier.Core\Blogifier.Core.csproj", "{B5E6D870-731D-4E48-B772-3751EAEBA77E}"
