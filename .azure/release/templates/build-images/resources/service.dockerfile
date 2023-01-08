@@ -9,6 +9,7 @@ RUN dotnet publish -c Release -o build/output
 
 # RUN IMAGE
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS run
+RUN mkdir /backup
 WORKDIR /app
 
 COPY --from=build /app/build/output .
