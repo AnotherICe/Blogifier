@@ -122,7 +122,6 @@ namespace Blogifier.Core.Api
         /// <param name="model">Author model</param>
         /// <returns>Success or 500 error</returns>
         [HttpPut("update")]
-        [RestrictToLocalhost]
         public async Task<ActionResult> Update(Author model)
         {
             try
