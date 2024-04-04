@@ -39,7 +39,13 @@ namespace Blogifier.Core.Api
             string myContent = JsonConvert.SerializeObject(content);
             StringContent stringContent = new StringContent(myContent, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"{BaseAddress}{requestUri}", stringContent);
-            _logger.LogInformation($"GetJsonAsync - resp - {response.StatusCode}");
+            _logger.LogInformation($"PostJsonAsync - resp - {response.StatusCode}");
+
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                _logger.LogInformation($"PostJsonAsync - resp - {responseContent}");
+            }
             
             httpClient.Dispose();
             return response;
