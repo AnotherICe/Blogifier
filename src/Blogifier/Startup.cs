@@ -29,6 +29,8 @@ namespace Blogifier
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+        
             services.AddBlogDatabase(Configuration);
             services.AddBlogSecurity();
             services.AddBlogLocalization();
