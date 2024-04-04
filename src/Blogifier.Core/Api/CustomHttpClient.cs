@@ -33,11 +33,14 @@ namespace Blogifier.Core.Api
         }
         public async Task<HttpResponseMessage> PostJsonAsync<T>(string requestUri, HttpRequest request, T content)
         {
+            _logger.LogInformation($"PostJsonAsync - {BaseAddress} - {requestUri}");
             HttpClientHandler clientHandler = GetHttpHandler(request);
             HttpClient httpClient = new HttpClient(clientHandler);
             string myContent = JsonConvert.SerializeObject(content);
             StringContent stringContent = new StringContent(myContent, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"{BaseAddress}{requestUri}", stringContent);
+            _logger.LogInformation($"GetJsonAsync - resp - {response.StatusCode}");
+            
             httpClient.Dispose();
             return response;
         }
